@@ -1,0 +1,142 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+#landing{
+	font-family: helvetica;
+  -webkit-text-stroke: 3px ;
+  color: rgba(255,255,255,.1);
+  font-size: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1
+}
+
+#circuit{
+  position: fixed;
+  top: 40vh;
+  left: 10vw;
+  animation: appear 15s linear;
+  animation-delay: 3s;
+  opacity: 0;
+}
+
+@keyframes appear{
+  20%{
+      opacity: 0
+  }  
+  100%{
+    opacity: 1
+  }
+}
+
+.light {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 80px;
+  border-radius: 50%;
+  background-color: #000;
+  box-shadow: 0 0 40px 20px #fff, 0 0 100px 50px #0ff;
+  transition: box-shadow 4s ease-out;
+  animation: spin 16s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.light:hover {
+  cursor: pointer;
+}
+
+.light::before, .light::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #6699FF;
+  box-shadow: 0 0 40px 20px #fff, 0 0 100px 50px #6699CC;
+  opacity: 0;
+  transition: opacity 8s, transform 8s;
+}
+
+.on {
+  background-color: #fff;
+  opacity: 0.5;
+  box-shadow: 0 0 80px 40px #fff, 0 0 200px 100px #3366FF;
+}
+
+.on::before {
+  transform: translateX(-100px);
+  opacity: 1;
+}
+
+.on::after {
+  transform: translateX(100px);
+  opacity: 1;
+}
+
+#info {
+  color: rgba(255,255,255,.7);
+  position: absolute;
+  width: 40vw;
+  left: 110vw;
+  top: 60vh;
+}
+
+button{
+  position: absolute;
+  bottom: 0;
+  left: 145vw;
+}
+
+/*about page */
+
+#header {
+  -webkit-text-stroke: 3px rgba(255,255,255,.7) ;
+  color: rgba(255,255,255,.1);
+  font-size: 10em;
+  position: absolute;
+  top: 50%;
+}
+
+#about {
+  color: rgba(255,255,255,.7);
+  font-size: 1.5em;
+  width: 45vw;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+}
+
+#gallery {
+  position: absolute;
+  margin-left: 2vw;
+  width:100vw;
+  top: 100vh;
+  color: white;
+}
+
+.product{
+  display: inline-block;
+  width: 33vw;
+  height: 50vh;
+}
+
+.placeholder{
+  width: 20vw;
+  height: 40vh;
+  background-color: gray
+}
+
+

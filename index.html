@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perecption Rachel Kim</title>
+  <meta charset="utf-8">
+  <link href='assets/css/main.css' media='all' rel='stylesheet' type='text/css' />
+  <link href='assets/css/reset.css' media='all' rel='stylesheet' type='text/css'/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <link rel="icon" href="img/icon.png" type="image/x-icon" />
+  <style> body{overflow-y: hidden;}</style>
+</head>
+	<body>
+  		<div id="landing">
+        <h1>perception</h1>
+  		</div>
+      <div id="circuit">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+       </div> 
+       <div id="info">
+         <h2>Rachel Kim</h2>
+         <p>thesis 2021 Parsons School of Fashion</p>
+       </div>
+
+      <button><a href="about.html">enter</a></button>
+
+		<script>
+			$( document ).ready(function() {
+
+        $(function() {
+            $('.light').addClass('on');
+            $('.light').on('click', function() {
+              $(this).toggleClass('on');
+            });
+          });
+        
+    		});
+	
+		</script>	
+	</body>
+</html>
