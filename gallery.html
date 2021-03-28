@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perecption Rachel Kim</title>
+  <meta charset="utf-8">
+  <link href='assets/css/main.css' media='all' rel='stylesheet' type='text/css' />
+  <link href='assets/css/reset.css' media='all' rel='stylesheet' type='text/css'/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <link rel="icon" href="img/icon.png" type="image/x-icon" />
+  <style> body{overflow-x: hidden;}</style>
+</head>
+	<body>
+      <div id="header">
+        <h1>perception</h1>
+      </div>
+  		<div id="about">
+         <p>Every home has a unique story—its decoration and design reflect the personalities of the owners. The exteriors of neighboring houses may resemble each other, sometimes appearing rather mundane, but the interior can be unique and ornately stylized.</p>
+       </div>
+
+       <div id="gallery">
+         <div class="product one">
+            <a href="./products/clock.html"><img class="qr" src="assets/img/clock.png">
+            <h2 class="tombstone">Clock</h2></a>
+         </div>
+         <div class="product two">
+           <a href="./products/teapot.html"><img class="qr" src="assets/img/teapot.png">
+           <h2 class="tombstone">Teapot</h2></a>
+         </div>
+         <div class="product three">
+           <a href="./products/terrarium.html"><img class="qr" src="assets/img/terrarium.png">
+           <h2 class="tombstone">Terrarium</h2></a>
+         </div>
+         <div class="product four">
+           <a href="./products/lamp.html"><img class="qr" src="assets/img/lamp.png">
+           <h2 class="tombstone">Lamp</h2></a>
+         </div>
+         <div class="product five">
+           <a href="./products/weight.html"><img class="qr" src="assets/img/weight.png">
+              <h2 class="tombstone">Weight</h2></a>
+         </div>
+         <div class="product six">
+           <a href="./products/plant-holder.html"><img class="qr" src="assets/img/plant.png">
+           <h2 class="tombstone">Plant Holder</h2></a>
+         </div>
+       </div>
+
+       <div id="circuit2">
+          <div class="item">
+            <div class="sparkle s-one"></div>
+          </div>
+           <div class="item">
+            <div class="sparkle s-two"></div>
+          </div>  
+           <div class="item">
+            <div class="sparkle s-three"></div>
+          </div>  
+           <div class="item">
+            <div class="sparkle s-four"></div>
+          </div>  
+           <div class="item">
+            <div class="sparkle s-five"></div>
+          </div>  
+           <div class="item">
+            <div class="sparkle s-six"></div>
+          </div>    
+       </div>
+
+		<script>
+			$( document ).ready(function() {
+        
+        $( ".six" ).mouseover(function() {
+          $( ".s-six" ).toggle('show hide');
+          
+        });
+        
+   	});
+	
+		</script>	
+	</body>
+</html>

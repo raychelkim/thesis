@@ -1,26 +1,43 @@
+@font-face {font-family: "bold"; src: url("../fonts/ABCMaxiRound-Light-Trial.woff");}
+@font-face {font-family: "light"; src: url("../fonts/ABCMaxiRound-Regular-Trial.woff");}
+
 html, body {
   height: 100vh;
   width: 100vw;
   background-color: black;
+  cursor: default;
+}
+
+html::-webkit-scrollbar {
+  height:7px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: rgba(255,255,255,.2);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(102,153,204,0.3);
 }
 
 #landing{
-	font-family: helvetica;
+	font-family: "bold";
   -webkit-text-stroke: 3px ;
   color: rgba(255,255,255,.1);
   font-size: 10em;
   position: absolute;
   top: 50%;
-  left: 50%;
-  z-index: 1
+  left: 40%;
+  z-index: 1;
+  text-transform: uppercase;
 }
 
 #circuit{
   position: fixed;
   top: 40vh;
   left: 10vw;
-  animation: appear 15s linear;
-  animation-delay: 3s;
+  animation: appear 20s linear;
+  animation-delay: 1s;
   opacity: 0;
 }
 
@@ -45,6 +62,7 @@ html, body {
   transition: box-shadow 4s ease-out;
   animation: spin 16s linear infinite;
 }
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
@@ -76,33 +94,49 @@ html, body {
   box-shadow: 0 0 80px 40px #fff, 0 0 200px 100px #3366FF;
 }
 
-.on::before {
-  transform: translateX(-100px);
-  opacity: 1;
-}
-
-.on::after {
-  transform: translateX(100px);
-  opacity: 1;
-}
-
 #info {
-  color: rgba(255,255,255,.7);
+  font-family: "light";
+  color: rgba(255,255,255,.3);
   position: absolute;
-  width: 40vw;
-  left: 110vw;
-  top: 60vh;
+  width: 30vw;
+  left: 105vw;
+  top: 62vh;
 }
 
 button{
+  font-family: "light";
   position: absolute;
   bottom: 0;
-  left: 145vw;
+  left: 130vw;
+  background-color: black;
+  border: none;
+  animation: appear 5s linear;
 }
 
-/*about page */
+button a {
+  font-size: 1.5em;
+  color: rgba(255,255,255,.7);
+}
+
+button:hover {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6699CC, 0 0 40px #6699CC, 0 0 50px #6699CC, 0 0 60px #6699CC, 0 0 70px #6699CC;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #3366FF, 0 0 40px #3366FF, 0 0 50px #3366FF, 0 0 60px #3366FF, 0 0 70px #3366FF, 0 0 80px #3366FF;
+  }
+}
+
+/*gallery page */
 
 #header {
+  font-family: "bold";
+  text-transform: uppercase;
   -webkit-text-stroke: 3px rgba(255,255,255,.7) ;
   color: rgba(255,255,255,.1);
   font-size: 10em;
@@ -111,6 +145,7 @@ button{
 }
 
 #about {
+  font-family: "light";
   color: rgba(255,255,255,.7);
   font-size: 1.5em;
   width: 45vw;
@@ -121,22 +156,76 @@ button{
 
 #gallery {
   position: absolute;
-  margin-left: 2vw;
+  margin-left: 6vw;
   width:100vw;
-  top: 100vh;
-  color: white;
+  top: 110vh;
+  color: rgba(255,255,255,.7);
 }
 
 .product{
   display: inline-block;
-  width: 33vw;
+  width: 32vw;
   height: 50vh;
 }
 
-.placeholder{
+.qr{
   width: 20vw;
   height: 40vh;
-  background-color: gray
 }
 
+h2.tombstone {
+  color: rgba(255,255,255,.7);
+  font-family: "light";
+  position: relative;
+  width: 30vw;
+  left: 33%;
+  transform: translate(-50%,0);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+}
+
+h2.tombstone:hover {
+  color: #6699CC;
+}
+
+#circuit2{
+  position: absolute;
+  margin-left: 6vw;
+  width:100vw;
+  top: 110vh;
+  color: rgba(255,255,255,.7);
+  z-index: -1;
+}
+
+.sparkle {
+  position: relative;
+  top: 7vh;
+  left: 3vw;
+  width: 25px;
+  height: 25px;
+  margin: 80px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 40px 20px #6699CC, 0 0 100px 50px #0ff;
+  z-index: -2;
+  opacity: 1
+}
+
+
+.item{
+  display: inline-block;
+  width: 32vw;
+  height: 50vh;
+}  
+
+.show {
+    opacity: 0.7
+}
+
+.hide {
+  opacity: 0;
+  display: none;
+  transform: none;
+}
 
