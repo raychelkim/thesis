@@ -8,33 +8,81 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <link rel="icon" href="img/icon.png" type="image/x-icon" />
   <style> body{overflow-x: hidden; overflow-y: hidden}</style>
- 
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.110/examples/js/controls/OrbitControls.js"></script>
+  <script src="../assets/js/STLLoader.js"></script>
+
 </head>
   <body>
       <div id="home">
         <a href="../index.html">perception</a>
       </div>
-      <div id="owner">
-        <p>Rachel Kim Thesis 2021</p>
-      </div>
       <div id="project-header">
-        <h1>weight bag</h1>
+        <h1>teapot bag</h1>
+      </div>
+      <div id="how-to">
+        <p>grab the bag, zoom into it, play with it</p>
       </div>
       <div id="image">
-        <img src=""></div>
       </div>
       <div id="detail-tombstone">
          <p>material</p>
          <p>dimension</p>
+      </div>
+      <div id="nav">
+          <p><a href="./terrarium.html">coming next : terrarium</a></p>
        </div>
 
-
     <script>
-      $( document ).ready(function() {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-        
-        
-        });
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.getElementById("image").appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+      var loader = new THREE.STLLoader();
+
+      const material = new THREE.MeshPhongMaterial( { color: 0x666666, specular: 0x111111, shininess: 200 } );
+
+        loader.load( './teapot.stl', function ( geometry ) {
+
+          const mesh = new THREE.Mesh( geometry, material );
+
+          mesh.rotation.x = -55;
+          mesh.rotation.y = 185;
+          mesh.rotation.set( 2, 1, 0 );
+
+          mesh.scale.set( .03, .03, .03 );
+
+          mesh.castShadow = true;
+          mesh.receiveShadow = true;
+
+          scene.add( mesh );
+
+          console.log(mesh)
+
+          const animate = function () {
+          requestAnimationFrame( animate );
+
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.01;
+
+        renderer.render( scene, camera );
+
+      };
+
+      animate();
+
+        } );
+
+      camera.position.z = 5;
+
+      renderer.setClearColor( 0xffffff );
+
   
     </script> 
   </body>

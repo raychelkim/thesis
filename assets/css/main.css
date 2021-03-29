@@ -268,7 +268,6 @@ h2.tombstone:hover {
 
 .show {
     opacity: 0.7;
-
 }
 
 .hide {
@@ -299,10 +298,13 @@ h2.tombstone:hover {
   text-transform: uppercase;
   font-size: 10em;
   position: absolute;
-  max-width: 40vw;
   bottom: 25vh;
   -webkit-text-stroke: 3px rgba(255,255,255,.7) ;
   color: rgba(255,255,255,.1);
+}
+
+#project-header h1{
+    max-width: 40vw;
 }
 
 #detail-tombstone{
@@ -315,13 +317,22 @@ h2.tombstone:hover {
   left: 44vw
 }
 
+#how-to {
+  font-family: "regular";
+  color: rgba(255,255,255,.2);
+  position: fixed;
+  top: 12vh;
+  left: 44vw;
+}
+
+
 #image {
   position: absolute;
   top: 15vh;
   left: 44vw;
-  width: 50vw;
-  height: 60vh;
-  background-color: white;
+  max-width: 50vw;
+  max-height: 60vh;
+/*  background-color: white;*/
 }
 
 #nav {
@@ -340,3 +351,27 @@ h2.tombstone:hover {
   color: white;
   animation: glow 1s ease-in-out infinite alternate;
 }
+
+canvas {
+  max-width: 50vw;
+  max-height: 60vh;
+}
+
+canvas:hover {
+  cursor: grab;
+}
+
+/*final*/
+
+#final-landing{
+  font-family: "title";
+  -webkit-text-stroke: 3px rgba(255,255,255,.1);
+  color: rgba(102,153,255,.4);
+  font-size: 10em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
