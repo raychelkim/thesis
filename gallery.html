@@ -10,36 +10,39 @@
   <style> body{overflow-x: hidden;}</style>
 </head>
 	<body>
+      <div id="owner">
+        <p>Rachel Kim Thesis 2021</p>
+      </div>
       <div id="header">
-        <h1>perception</h1>
+        <h1><a href="index.html">perception</a></h1>
       </div>
   		<div id="about">
          <p>Every home has a unique story—its decoration and design reflect the personalities of the owners. The exteriors of neighboring houses may resemble each other, sometimes appearing rather mundane, but the interior can be unique and ornately stylized.</p>
        </div>
 
        <div id="gallery">
-         <div class="product one">
-            <a href="./products/clock.html"><img class="qr" src="assets/img/clock.png">
+         <div class="product">
+            <a href="./products/clock.html"><img class="qr one" src="assets/img/clock.png">
             <h2 class="tombstone">Clock</h2></a>
          </div>
-         <div class="product two">
-           <a href="./products/teapot.html"><img class="qr" src="assets/img/teapot.png">
+         <div class="product">
+           <a href="./products/teapot.html"><img class="qr two" src="assets/img/teapot.png">
            <h2 class="tombstone">Teapot</h2></a>
          </div>
-         <div class="product three">
-           <a href="./products/terrarium.html"><img class="qr" src="assets/img/terrarium.png">
+         <div class="product">
+           <a href="./products/terrarium.html"><img class="qr three" src="assets/img/terrarium.png">
            <h2 class="tombstone">Terrarium</h2></a>
          </div>
-         <div class="product four">
-           <a href="./products/lamp.html"><img class="qr" src="assets/img/lamp.png">
+         <div class="product">
+           <a href="./products/lamp.html"><img class="qr four" src="assets/img/lamp.png">
            <h2 class="tombstone">Lamp</h2></a>
          </div>
-         <div class="product five">
-           <a href="./products/weight.html"><img class="qr" src="assets/img/weight.png">
+         <div class="product">
+           <a href="./products/weight.html"><img class="qr five" src="assets/img/weight.png">
               <h2 class="tombstone">Weight</h2></a>
          </div>
-         <div class="product six">
-           <a href="./products/plant-holder.html"><img class="qr" src="assets/img/plant.png">
+         <div class="product">
+           <a href="./products/plant-holder.html"><img class="qr six" src="assets/img/plant.png">
            <h2 class="tombstone">Plant Holder</h2></a>
          </div>
        </div>
@@ -68,10 +71,31 @@
 		<script>
 			$( document ).ready(function() {
         
+        $( ".one" ).mouseover(function() {
+          $( ".s-one" ).toggle('show hide');
+        });
+        
+        $( ".two" ).mouseover(function() {
+          $( ".s-two" ).toggle('show hide');
+        });
+
+        $( ".three" ).mouseover(function() {
+          $( ".s-three" ).toggle('show hide');
+        });
+
+        $( ".four" ).mouseover(function() {
+          $( ".s-four" ).toggle('show hide');
+        });
+        
+        $( ".five" ).mouseover(function() {
+          $( ".s-five" ).toggle('show hide');
+        });
+
         $( ".six" ).mouseover(function() {
           $( ".s-six" ).toggle('show hide');
-          
         });
+
+
         
    	});
 	

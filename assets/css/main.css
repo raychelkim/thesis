@@ -1,5 +1,5 @@
-@font-face {font-family: "bold"; src: url("../fonts/ABCMaxiRound-Light-Trial.woff");}
-@font-face {font-family: "light"; src: url("../fonts/ABCMaxiRound-Regular-Trial.woff");}
+@font-face {font-family: "title"; src: url("../fonts/ABCMaxiRound-Light-Trial.woff");}
+@font-face {font-family: "regular"; src: url("../fonts/ABCMaxiRound-Regular-Trial.woff");}
 
 html, body {
   height: 100vh;
@@ -21,7 +21,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 #landing{
-	font-family: "bold";
+	font-family: "title";
   -webkit-text-stroke: 3px ;
   color: rgba(255,255,255,.1);
   font-size: 10em;
@@ -95,7 +95,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 #info {
-  font-family: "light";
+  font-family: "regular";
   color: rgba(255,255,255,.3);
   position: absolute;
   width: 30vw;
@@ -104,7 +104,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 button{
-  font-family: "light";
+  font-family: "regular";
   position: absolute;
   bottom: 0;
   left: 130vw;
@@ -134,18 +134,34 @@ button:hover {
 
 /*gallery page */
 
-#header {
-  font-family: "bold";
+#owner {
+  font-family: "regular";
+  color: rgba(255,255,255,.3);
+  position: fixed;
+  top: 12vh;
+  right: -1vw;
+  transform: rotate(-90deg);
+}
+
+#header{
+  font-family: "title";
   text-transform: uppercase;
-  -webkit-text-stroke: 3px rgba(255,255,255,.7) ;
-  color: rgba(255,255,255,.1);
   font-size: 10em;
   position: absolute;
   top: 50%;
 }
 
+#header h1 a{
+  -webkit-text-stroke: 3px rgba(255,255,255,.7) ;
+  color: rgba(255,255,255,.1);
+}
+
+#header :hover {
+  color: #6699CC
+}
+
 #about {
-  font-family: "light";
+  font-family: "regular";
   color: rgba(255,255,255,.7);
   font-size: 1.5em;
   width: 45vw;
@@ -175,7 +191,7 @@ button:hover {
 
 h2.tombstone {
   color: rgba(255,255,255,.7);
-  font-family: "light";
+  font-family: "regular";
   position: relative;
   width: 30vw;
   left: 33%;
@@ -199,19 +215,15 @@ h2.tombstone:hover {
 }
 
 .sparkle {
-  position: relative;
-  top: 7vh;
-  left: 3vw;
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  width: 15px;
+  height: 15px;
   margin: 80px;
   border-radius: 50%;
-  background-color: white;
-  box-shadow: 0 0 40px 20px #6699CC, 0 0 100px 50px #0ff;
+  background-color: rgba(255,255,255,0.9);
   z-index: -2;
-  opacity: 1
+  opacity: 1;
 }
-
 
 .item{
   display: inline-block;
@@ -219,13 +231,112 @@ h2.tombstone:hover {
   height: 50vh;
 }  
 
+.s-one {
+  box-shadow: 0 0 40px 20px #6699CC, 0 0 100px 50px #0033CC;
+  position: absolute;
+  top: 8vh;
+  left: 3vw;
+}
+
+.s-two{
+  box-shadow: 0 0 40px 20px #99CCFF, 0 0 100px 50px #6699CC;
+}
+
+.s-three{
+  box-shadow: 0 0 40px 20px #6699CC, 0 0 100px 50px #00CCFF;
+  position: absolute;
+  top: 10vh;
+  right: 15vw;
+}
+
+.s-four{
+  box-shadow: 0 0 40px 20px #0033CC, 0 0 100px 50px #6699CC;
+  position: absolute;
+  left: 10vw;
+}
+
+.s-five {
+  box-shadow: 0 0 40px 20px #6699CC, 0 0 100px 50px #3366FF;
+  position: absolute;
+  top: 60vh;
+  left: 35vw;
+}
+
+.s-six{
+  box-shadow: 0 0 40px 20px #336699, 0 0 100px 50px #6699CC;
+}
+
 .show {
-    opacity: 0.7
+    opacity: 0.7;
+
 }
 
 .hide {
   opacity: 0;
-  display: none;
-  transform: none;
+
 }
 
+#home {
+  position: fixed;
+  top: 2vh;
+  left: 1vw;
+  font-family: "regular";
+}
+
+#home a {
+  color: rgba(255,255,255,.3);
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+#home:hover {
+  color: white;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+#project-header{
+  font-family: "title";
+  text-transform: uppercase;
+  font-size: 10em;
+  position: absolute;
+  max-width: 40vw;
+  bottom: 25vh;
+  -webkit-text-stroke: 3px rgba(255,255,255,.7) ;
+  color: rgba(255,255,255,.1);
+}
+
+#detail-tombstone{
+  font-family: "title";
+  color: rgba(255,255,255,.7);
+  font-size: 1.5em;
+  width: 45vw;
+  position: absolute;
+  top: 77vh;
+  left: 44vw
+}
+
+#image {
+  position: absolute;
+  top: 15vh;
+  left: 44vw;
+  width: 50vw;
+  height: 60vh;
+  background-color: white;
+}
+
+#nav {
+  position: absolute;
+  bottom: 1vh;
+  right: 2vw;
+}
+
+#nav a {
+    color: rgba(255,255,255,.8);
+    font-size: 1.5em;
+    font-family: "title";
+}
+
+#nav:hover{
+  color: white;
+  animation: glow 1s ease-in-out infinite alternate;
+}
