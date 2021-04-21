@@ -36,8 +36,7 @@ html::-webkit-scrollbar-thumb {
   position: fixed;
   top: 40vh;
   left: 10vw;
-  animation: appear 20s linear;
-  animation-delay: 1s;
+  animation: appear 10s linear;
   opacity: 0;
 }
 
@@ -139,7 +138,7 @@ button:hover {
   color: rgba(255,255,255,.3);
   position: fixed;
   top: 12vh;
-  right: -1vw;
+  right: -3vw;
   transform: rotate(-90deg);
 }
 
@@ -176,6 +175,22 @@ button:hover {
   width:100vw;
   top: 110vh;
   color: rgba(255,255,255,.7);
+  opacity: 0;
+}
+
+.showing{
+  opacity: 1;
+  animation: showScroll 3s ease-in forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes showScroll{
+  2%{
+      opacity: 0
+  }  
+  100%{
+    opacity: 1
+  }
 }
 
 .product{

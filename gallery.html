@@ -23,19 +23,19 @@
        <div id="gallery">
          <div class="product">
             <a href="./products/clock.html"><img class="qr one" src="assets/img/clock.png">
-            <h2 class="tombstone">Clock</h2></a>
+            <h2 class="tombstone">Tick-Tock</h2></a>
          </div>
          <div class="product">
            <a href="./products/teapot.html"><img class="qr two" src="assets/img/teapot.png">
-           <h2 class="tombstone">Teapot</h2></a>
+           <h2 class="tombstone">Teatime</h2></a>
          </div>
          <div class="product">
            <a href="./products/terrarium.html"><img class="qr three" src="assets/img/terrarium.png">
-           <h2 class="tombstone">Terrarium</h2></a>
+           <h2 class="tombstone">Scent Garden</h2></a>
          </div>
          <div class="product">
            <a href="./products/lamp.html"><img class="qr four" src="assets/img/lamp.png">
-           <h2 class="tombstone">Lamp</h2></a>
+           <h2 class="tombstone">Illumination</h2></a>
          </div>
          <div class="product">
            <a href="./products/weight.html"><img class="qr five" src="assets/img/weight.png">
@@ -43,7 +43,7 @@
          </div>
          <div class="product">
            <a href="./products/plant-holder.html"><img class="qr six" src="assets/img/plant.png">
-           <h2 class="tombstone">Plant Holder</h2></a>
+           <h2 class="tombstone">Planterette</h2></a>
          </div>
        </div>
 
@@ -69,6 +69,7 @@
        </div>
 
 		<script>
+
 			$( document ).ready(function() {
         
         $( ".one" ).mouseover(function() {
@@ -92,9 +93,23 @@
         });
 
         $( ".six" ).mouseover(function() {
-          $( ".s-six" ).toggle('show hide');
+          $( ".s-six" ).toggle('show hide')
         });
 
+
+
+      window.onscroll = function() {
+          changeHeader();
+
+        };
+
+      function changeHeader() {
+          if (document.body.scrollTop > 380 || document.documentElement.scrollTop > 50) {
+            $("#gallery").addClass("showing");    
+       } else {
+            $("#gallery").removeClass("showing");   
+          }
+      }
 
         
    	});

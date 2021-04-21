@@ -22,7 +22,7 @@
         <p>Rachel Kim Thesis 2021</p>
       </div> -->
       <div id="project-header">
-        <h1>plant holder</h1>
+        <h1>plant-<br>erette</h1>
       </div>
       <div id="how-to">
         <p>grab the bag, zoom into it, play with it</p>
@@ -30,14 +30,13 @@
       <div id="image">
       </div>
       <div id="detail-tombstone">
-         <p>material</p>
-         <p>dimension</p>
+        <h1 style="background-color: blue; width: 80px" id="control1"></h1>
       </div>
       <div id="nav">
-          <p><a href="./final.html">last room</a></p>
+          <p><a href="./final.html">final</a></p>
        </div>
-
     <script>
+
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -51,15 +50,18 @@
 
       const material = new THREE.MeshPhongMaterial( { color: 0x666666, specular: 0x111111, shininess: 200 } );
 
-        loader.load( '../assets/3d/weight.stl', function ( geometry ) {
+        loader.load( '../assets/3d/plant-holder.stl', function ( geometry ) {
 
           const mesh = new THREE.Mesh( geometry, material );
 
+          mesh.rotation.x = -20;
+          // mesh.rotation.y = 80;
+          // mesh.rotation.z = 100;
 
-
-          mesh.rotation.set( -90, 0, 10 );
+          mesh.position.y = 7;
 
           mesh.scale.set( .05, .05, .05 );
+
 
           mesh.castShadow = true;
           mesh.receiveShadow = true;
@@ -68,25 +70,42 @@
 
           console.log(mesh)
 
-          const animate = function () {
+      //     const animate = function () {
+      //       requestAnimationFrame( animate );
+      //       mesh.rotation.x += 0.008;
+      //       mesh.rotation.y += 0.008;
+      //       renderer.render( scene, camera );
+      //     };
+
+      // animate();
+
+      var itemMoving = true,
+          buttonText = document.getElementById("control1");
+
+      $("#control1").click(function() {
+        itemMoving = !itemMoving;
+      })
+
+      const animate = function() {
           requestAnimationFrame( animate );
+          render();
+        }
+          
+      function render() {
+        if (itemMoving){
+          mesh.rotation.x += 0.008;
+          mesh.rotation.y += 0.008;
+          buttonText.textContent = "pause";
+        }else{
+          buttonText.textContent = "play";
+        }
+        renderer.setClearColor( 0xffffff);
+        renderer.render(scene, camera);
+      }
+      animate();
+      } );
+        camera.position.z = 5;
 
-        mesh.rotation.x += 0.02;
-        mesh.rotation.y += 0.005;
-
-        renderer.render( scene, camera );
-
-      };
-
-       animate();
-
-        } );
-
-      camera.position.z = 5;
-
-      renderer.setClearColor( 0xffffff );
-
-  
     </script> 
   </body>
 </html>

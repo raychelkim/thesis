@@ -22,7 +22,7 @@
         <p>Rachel Kim Thesis 2021</p>
       </div> -->
       <div id="project-header">
-        <h1>clock bag</h1>
+        <h1>tick-tock</h1>
       </div>
       <div id="how-to">
         <p>grab the bag, zoom into it, play with it</p>
@@ -30,11 +30,10 @@
       <div id="image">
       </div>
       <div id="detail-tombstone">
-         <p>material</p>
-         <p>dimension</p>
+        <h1 style="background-color: blue; width: 80px" id="control1"></h1>
       </div>
       <div id="nav">
-          <p><a href="./teapot.html">coming next : teapot</a></p>
+          <p><a href="./teapot.html">coming next : teatime</a></p>
        </div>
 
     <script>
@@ -68,23 +67,33 @@
 
           console.log(mesh)
 
-          const animate = function () {
+          //
+      var itemMoving = true,
+      buttonText = document.getElementById("control1");
+
+      $("#control1").click(function() {
+        itemMoving = !itemMoving;
+      })
+
+      const animate = function() {
           requestAnimationFrame( animate );
-
-        mesh.rotation.x += 0.01;
-        mesh.rotation.y += 0.01;
-
-        renderer.render( scene, camera );
-
-      };
-
+          render();
+        }
+          
+      function render() {
+        if (itemMoving){
+          mesh.rotation.x += 0.008;
+          mesh.rotation.y += 0.008;
+          buttonText.textContent = "pause";
+        }else{
+          buttonText.textContent = "play";
+        }
+        renderer.setClearColor( 0xffffff);
+        renderer.render(scene, camera);
+      }
       animate();
-
-        } );
-
-      camera.position.z = 5;
-
-      renderer.setClearColor( 0xffffff );
+      } );
+        camera.position.z = 5;
 
   
     </script> 
