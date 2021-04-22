@@ -340,7 +340,6 @@ h2.tombstone:hover {
   left: 44vw;
 }
 
-
 #image {
   position: absolute;
   top: 15vh;
@@ -378,15 +377,65 @@ canvas:hover {
 
 /*final*/
 
-#final-landing{
+#final-landing h2 a{
   font-family: "title";
-  -webkit-text-stroke: 3px rgba(255,255,255,.1);
-  color: rgba(102,153,255,.4);
-  font-size: 10em;
+  -webkit-text-stroke: 2px rgba(102,153,255,.8);
+  color: rgba(255,255,255,.1);
+  font-size: 6em;
   position: absolute;
-  top: 50%;
+  top: 2vh;
   left: 0;
   z-index: 1;
   text-transform: uppercase;
 }
 
+#final-landing h2 a:hover {
+  color: white;
+  opacity: 0.8;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+#finalImage {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#finalImage img {
+  width: 60vw;
+}
+
+#creator h3{
+  line-height: 1.25em;
+  position: absolute;
+  font-family: "regular", sans-serif;
+  font-size: 1.5em;
+  top: 90vh;
+  left: 75vw;
+  color: rgba(102,153,255,.6);
+}
+
+#creator h3 a {
+  padding: 2px;
+  font-family: "regular";
+  text-decoration: underline;
+
+  color: rgba(102,153,255,.6);
+}
+
+#creator h3 a:hover {
+  color: #99CCCC;
+  opacity: 0.8;
+  animation: outGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes outGlow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6699CC, 0 0 40px #6699CC, 0 0 50px #6699CC, 0 0 60px #6699CC, 0 0 70px #6699CC;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #3366FF, 0 0 40px #3366FF, 0 0 50px #3366FF, 0 0 60px #3366FF, 0 0 70px #3366FF, 0 0 80px #3366FF;
+  }
+}
